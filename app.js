@@ -1,50 +1,84 @@
 'use strict';
 
-const cartItemsEl = document.querySelector(".cart-items-row");
-const removeCartItemBtn = document.querySelectorAll(".remove-btn");
-const addToCartBtn = document.querySelectorAll(".shop-item-button");
+//Elements
+const openMyCartButton = document.getElementById("open-myCart");
+const cartItems = document.querySelector(".cart-container");
+const closeMyCartButton = document.getElementById("close-myCart");
+const removeCartItemButtons = document.querySelectorAll(".remove-btn");
+const addToCartButtons = document.querySelectorAll(".shop-item-button");
+const cartQuantity = document.querySelectorAll(".cart-quantity-input");
 
-for(let i = 0; i < addToCartBtn.length; i++) {
-    let button = addToCartBtn[i];
+//open my cart
+openMyCartButton.addEventListener("click", () => {
+    cartItems.style.display = "block";
+})
+
+//close my cart
+closeMyCartButton.addEventListener("click", () => {
+    cartItems.style.display = "none";
+})
+
+//remove button
+for(let i = 0; i < removeCartItemButtons.length; i++) {
+    let button = removeCartItemButtons[i];
+    button.addEventListener("click", removeCartItem);
+}
+
+//function: remove item from cart
+function removeCartItem(event) {
+    const removeButton = event.target;
+    removeButton.parentElement.parentElement.remove();
+}
+
+//add to cart buttons
+for(let i = 0; i < addToCartButtons.length; i++) {
+    let button = addToCartButtons[i];
     button.addEventListener("click", addToCartClicked)
 }
 
+//function: add item to cart
 function addToCartClicked(event) {
-    // console.log(event.target);
     let button = event.target;
-    const shopItem = button.parentElement.parentElement;
-    const title = shopItem.querySelector(".shop-item-title").innerText;
-    const price = shopItem.querySelector(".shop-item-price").innerText;
-    const imageSrc = shopItem.querySelector(".shop-item-img").src;
+    let shopItem = button.parentElement.parentElement;
+    let title = shopItem.getElementsByClassName("shop-item-title")[0].innerHTML;
+    let price = shopItem.getElementsByClassName("shop-item-price")[0].innerHTML;
+    let imageSrc = shopItem.getElementsByClassName("shop-item-img")[0].src;
 
     addItemToCart(title, price, imageSrc);
 }
 
-//add item to cart
+//function: add item to cart
 function addItemToCart(title, price, imageSrc) {
-    cartItemsEl.innerHTML = "";
-    cartItemsEl.innerHTML += `
-       <div class="cart-item">
-          <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
-          <span class="cart-item-title">${title}</span>
-          <span class="cart-item-title">${price}</span>
-          <div class="cart-quantity">
-             <input class="cart-quantity-input" type="number" value="1">
-             <button class="remove-btn" type="button" onclick="removeCartItem()">REMOVE</button>
-          </duv>
-       </div>
+    const cartItemsContainer = document.querySelector(".cart-items");
+    const cartDiv = document.createElement("div");
+    cartDiv.classList.add("insert-cart");
+
+    cartDiv.innerHTML += `
+    <div class="cart-item">
+    <img src="${imageSrc}" class="cart-item-image" width="100" height="100">
+    <span class="cart-item-title">${title}</spna>
+</div>
+<span class="cart-price cart-column">${price}</span>
+<div class="cart-quantity cart-column">
+    <input class="cart-quantity-input" type="number" value="1">
+    <button class="remove-btn" type="button" onclick="removeCartItem(event)">REMOVE</button>
+</div>
     `
+
+    cartItemsContainer.appendChild(cartDiv);
+
 }
 
-//remove item from cart
-for(let i = 0; i < removeCartItemBtn.length; i++) {
-    let button = removeCartItemBtn[i]
-    button.addEventListener("click", removeCartItem)
+//chnage number of cart quantity
+for(let i = 0; i < cartQuantity.length; i++) {
+    cartQuantity[i].addEventListener("click", (event) => {
+        let input = event.target;
+        if(isNaN(input.value) || input.value <= 0) {
+            input.value = 1;
+        }
+    })
+
+    // totalCart();
 }
 
-//remove item from cart
-function removeCartItem(event) {
-    // console.log(event.target);
-    let removeBtn = event.target;
-    removeBtn.parentElement.parentElement.remove();
-}
+//function: total cart items and price

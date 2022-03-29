@@ -18,11 +18,48 @@
         </nav>
     </header>
 
+    <div class="my-cart">
+        <div id="open-myCart">My CART</div>
+        <span>0</span>
+    </div>
+
+    <section class="cart-container">
+
+        <div class="cart-items">
+            <div id="close-myCart">X</div>
+            <div class="cart-item cart-column">
+                <img src="./image/green-skirt.jpg" alt="" class="cart-item-image" width="100" height="100">
+                <span class="cart-item-title">Green Skirt</span>
+                <span class="cart-quantity">
+                    <input class="cart-quantity-input" type="number" value="1">
+                    <button class="remove-btn" type="button">REMOVE</button>
+                </span>
+            </div>
+            <div class="cart-item cart-column">
+                <img src="./image/beige-tsirt.jpg" alt="" class="cart-item-image" width="100" height="100">
+                <span class="cart-item-title">Baige Tshirt</span>
+                <span class="cart-quantity">
+                    <input class="cart-quantity-input" type="number" value="1">
+                    <button class="remove-btn" type="button">REMOVE</button>
+                </span>
+            </div>
+        </div>
+
+            <div class="end-of-cart-items">
+                <div class="cart-total">
+                    <strong class="cart-total-title">TOTAL</strong>
+                    <span class="cart-total-price">$00.00</span>    
+                </div>
+                <div class="btn-purchase">PURCHASE</div>
+            </div>
+
+    </section>
+
     <section class="container content-section">
-        <h2 class="section-header">LADIES</h2>
+        <h2 class="section-header">CLOTH</h2>
         <div class="shop-items">
             <div class="shop-item">
-                <span class="shop-item-title">Item 1</span>
+                <span class="shop-item-title">Beige Tshirt</span>
                     <img src="./image/beige-tsirt.jpg" alt="" class="shop-item-img">
                     <div class="shop-item-details">
                         <span class="shop-item-price">$12.99</span>
@@ -30,57 +67,33 @@
                     </div>
             </div>
             <div class="shop-item">
-                <span class="shop-item-title">Item 2</span>
-                    <img src="./image/black-tshirt.jpg" alt="" class="shop-item-img">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$13.49</span>
-                        <button class="btn btn-primary shop-item-button">ADD TO CART</button>
-                    </div>
+                <span class="shop-item-title">Blsck Tshirt</span>
+                <img src="./image/black-tshirt.jpg" alt="" class="shop-item-img">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">$13.49</span>
+                    <button class="btn btn-primary shop-item-button">ADD TO CART</button>
+                </div>
             </div>
             <div class="shop-item">
-                <span class="shop-item-title">Item 4</span>
+                <span class="shop-item-title">Green Skirt</span>
+                <img src="./image/green-skirt.jpg" alt="" class="shop-item-img">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">$11.29</span>
+                    <button class="btn btn-primary shop-item-button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <span class="shop-item-title">Jeans</span>
                     <img src="./image/jeans.jpg" alt="" class="shop-item-img">
                     <div class="shop-item-details">
                         <span class="shop-item-price">$9.99</span>
-                        <button class="btn btn-primary shop-item-button">ADD TO CART</button>
+                        <button class="shop-item-button">ADD TO CART</button>
                     </div>
             </div>
         </div>
     </section>
 
-    <section class="container content-section">
-        <button type="button" id="target">My Cart</button>
-        <h2 class="section-header">CART</h2>
-        <div class="cart-row">
-            <span class="cart-item cart-header cart-column">ITEM</span>
-            <span class="cart-price cart-header cart-column">PRICE</span>
-            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-        </div>
-
-        <div class="cart-items">
-            <div class="cart-items-row">
-             <!-- render cart items here -->
-                <div class="cart-item cart-column">
-                    <img src="./image/green-skirt.jpg" alt="" class="cart-item-image" width="100" height="100">
-                    <span class="cart-item-title">Green Skirt</span>
-                    <span class="cart-quantity cart-column">
-                        <input class="cart-quantity-input" type="number" value="1">
-                        <button class="remove-btn" type="button">REMOVE</button>
-                    </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="cart-total">
-            <strong class="cart-total-title">TOTAL</strong>
-            <span class="cart-total-price">$00.00</span>
-        </div>
-        <button class="btn-purchase" type="button">PURCHASE</button>
-    </section>
-
-
     
-
     <script src="app.js"></script>
 </body>
 </html>
