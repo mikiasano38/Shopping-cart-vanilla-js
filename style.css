@@ -1,223 +1,162 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.main-header {
-    background-size: cover;
-    background-position: center;
-    background: darkgrey;
-    height: 80px;
-    position: relative;
-}
-
-.nav ul {
-    margin: 0;
-    padding: 0;
-    line-height: 80px;
-    text-align: center;
-}
-
-.nav li {
-    display: inline;
-}
-
-.nav a {
-    display: inline-block;
-    color: purple;
-    text-decoration: none;
-    margin-left: 10px;
-    margin-right: 10px;
-    float: right;
-    transition: .4s;
-}
-
-.nav a:hover {
-    color: saddlebrown;
-    background-color: rgba(255, 255, 255, .5);
-}
-
-.content-section {
-    margin: 1em;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5em;
-}
-
-.section-header {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    font-size: 2.5em;
-}
-
-.shop-item {
-    margin: 30px;
-}
-
-.shop-item-title {
-    display: block;
+.header {
+    /* think about this width later */
     width: 100%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 15px;
+    height: 50px;
 }
 
-.shop-item-img {
-    width: 250px;
-    height: 320px;
-}
-
-.shop-item-details {
+ul {
     display: flex;
-    align-items: center;
-    padding: 10px;
+    justify-content: flex-end;
+    list-style: none;
+
 }
-.shop-item-price {
-    flex-grow: 1;
-    color: #333;
+
+ul > li {
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: darkgreen;
+    transition: .3s;
+}
+
+.nav-bar a:hover {
+    opacity: .7;
 }
 
 .cart-container {
-    max-width: 900px;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    padding: 0 1.5em;
-    display: none;
+    /* outline: 5px solid red; */
+    border: 1px solid black;
+    padding: 10px 15px;
+    width: 300px;
+    height: 500px;
+    overflow: hidden;
 }
 
-.my-cart {
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 30px;
+#close-my-cart {
     float: right;
-    margin-right: 10px;
-}
-
-#open-myCart {
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding-top: 3px;
+    margin: 0 auto;
+    background: seashell;
+    transition: .2s ease-in;
     cursor: pointer;
-    width: 100px;
-    color: salmon;
-    font-weight: bold;
-    border:none;
-    border-radius: 4px;
-    text-align: center;
-    transition: .4s;
+    user-select: none;
 }
 
-#open-myCart:hover {
-    color: slategrey;
-    background-color: salmon;
-}
-
-.cart-column {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #000;
-    padding-bottom: 10px;
-    margin-top: 10px;
-}
-
-.insert-cart {
-    display: flex;
-}
-
-.cart-quantity {
-    width: 35%;
-}
-
-.cart-item-title {
-    color: #333;
-    margin-left: .5em;
-    font-size: 1.2em;
-}
-
-.cart-item-image {
-    width: 75px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.cart-quantity-input {
-    height: 34px;
-    width: 50px;
-    border-radius: 5px;
-    border: 1px solid #000;
-    background-color: #eee;
-    color: #333;
-    padding: 0;
-    text-align: center;
-    font-size: 1.2em;
-    margin-left: 10px;
-    margin-right: 25px;
-}
-
-.remove-btn {
-    color: red;
-    background-color: bisque;
-    border: none;
-    border-radius: .3em;
-    font-weight: bold;
-    transition: .5s;
-}
-
-.remove-btn:hover {
-    color: #fff;
-    background-color: coral;
+#close-my-cart:hover {
+    background: lightgray;
 }
 
 .cart-total {
-    text-align: end;
-    margin-top: 10px;
-    margin-right: 10px;
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-start;
 }
 
-.cart-total-title {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: #000;
-    margin-right: 10px;
-}
-
+.cart-total-title,
 .cart-total-price {
-    color: #333;
-    font-size: 1.3em;
+    border-bottom: 2px solid black;
+    margin-top: 15px;
+    margin-bottom: 14px;
+    margin-left: 10px;
 }
 
-.btn-purchase {
-    cursor: pointer;
-    background-color: darkcyan;
-    color: #eee;
-    font-weight: normal;
-    border: 1px solid #000;
-    border-radius: 5px;
-    width: 150px;
+/* .cart-total-title,
+.cart-total-price,
+.purchase-button {
+    margin: 10px;
+} */
+
+.purchase-button {
+    border: 1px solid seagreen;
+    background: seagreen;
+    color: white;
+    font-size: 15px;
+    width: 100px;
     text-align: center;
-    font-size: 1.5em;
-    transition: .3s ease-in-out;
-    margin: 0 auto;
-}
-
-.btn-purchase:hover {
-    color: darkgreen;
-    background-color: #eee;
-}
-
-#close-myCart {
-    width: 25px;
-    text-align: center;
-    border: 1px solid #000;
-    border-radius: 10px;
+    margin-left: 20px;
+    padding-top: 15px;
+    border-radius: 20px;
     cursor: pointer;
-    font-weight: bold;
-    float: right;
+    user-select: none;
 }
+
+.cart-products {
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.cart-product {
+    margin-bottom: 20px;
+}
+
+.cart-quantity {
+    display: inline-block;
+    min-width: 100px;
+} 
+
+.cart-quantity-input {
+    width: 32px;
+}
+
+.remove-button {
+    cursor: pointer;
+}
+
+/* doesn't work... why??? */
+.hidden {
+    display: none;
+}
+
+#products-carousel {
+    width: 500px;
+    height: 300px;
+    outline: 8px solid red;
+    margin: 70px auto;
+}
+
+#products-carousel > main {
+    height: 100%;
+}
+
+#main-image ul {
+    list-style: none;
+    /* margin: 0;
+    padding: 0; */
+    height: 100%;
+    display: flex;
+}
+
+#main-image li {
+    min-width: 500px;
+    height: 100%;
+}
+
+#main-image .carousel-image {
+    width: 500px;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+

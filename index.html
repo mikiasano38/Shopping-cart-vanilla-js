@@ -8,92 +8,98 @@
 </head>
 <body>
 
-    <header class="main-header">
-        <nav class="nav main-nav">
+    <header class="header">
+        <nav class="nav-bar">
             <ul>
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">STORE</a></li>
                 <li><a href="#">ABOUT</a></li>
+                <li><a href="#" id="my-cart">Cart</a><span>0</span></li>
             </ul>
         </nav>
     </header>
 
-    <div class="my-cart">
-        <div id="open-myCart">My CART</div>
-        <span>0</span>
-    </div>
+    <!-- based on how to make modal to display and hide -->
+    <section class="cart-container" id="hidden">
+        <div id="close-my-cart">X</div>
+        <div class="cart-total">
+            <span class="cart-total-title">TOTAL</span>
+            <span class="cart-total-price"><small>$</small>00.00</span>
+            <strong class="purchase-button">PURCHASE</strong>
+        </div>
 
-    <section class="cart-container">
-
-        <div class="cart-items">
-            <div id="close-myCart">X</div>
-            <div class="cart-item cart-column">
-                <img src="./image/green-skirt.jpg" alt="" class="cart-item-image" width="100" height="100">
-                <span class="cart-item-title">Green Skirt</span>
+        <div class="cart-products">
+            <div class="cart-product">
+                <!-- list style is also good -->
+                <img src="image/green-skirt.jpg" alt="image" class="cart-product-image" width="100" height="100">
+                <span class="cart-product-title">Green Skirt</span>
                 <span class="cart-quantity">
                     <input class="cart-quantity-input" type="number" value="1">
-                    <button class="remove-btn" type="button">REMOVE</button>
+                    <button class="remove-button" type="button">REMOVE</button>
                 </span>
             </div>
-            <div class="cart-item cart-column">
-                <img src="./image/beige-tsirt.jpg" alt="" class="cart-item-image" width="100" height="100">
-                <span class="cart-item-title">Baige Tshirt</span>
+            <div class="cart-product">
+                <img src="image/beige-tsirt.jpg" alt="image" class="cart-product-image" width="100" height="100">
+                <span class="cart-product-title">Baige Tshirt</span>
                 <span class="cart-quantity">
                     <input class="cart-quantity-input" type="number" value="1">
-                    <button class="remove-btn" type="button">REMOVE</button>
+                    <button class="remove-button" type="button">REMOVE</button>
                 </span>
             </div>
         </div>
-
-            <div class="end-of-cart-items">
-                <div class="cart-total">
-                    <strong class="cart-total-title">TOTAL</strong>
-                    <span class="cart-total-price">$00.00</span>    
-                </div>
-                <div class="btn-purchase">PURCHASE</div>
-            </div>
-
     </section>
 
-    <section class="container content-section">
-        <h2 class="section-header">CLOTH</h2>
-        <div class="shop-items">
-            <div class="shop-item">
-                <span class="shop-item-title">Beige Tshirt</span>
-                    <img src="./image/beige-tsirt.jpg" alt="" class="shop-item-img">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$12.99</span>
-                        <button class="btn btn-primary shop-item-button">ADD TO CART</button>
+    <section id="products-carousel">
+        <main>
+            <div id="main-image">
+                <ul>
+                    <li><img src="image/beige-tsirt.jpg" alt="image" class="carousel-image"></li>
+                    <li><img src="image/black-tshirt.jpg" alt="image" class="carousel-image"></li>
+                    <li><img src="image/green-skirt.jpg" alt="imag" class="carousel-image"></li>
+                    <li><img src="image/jeans.jpg" alt="image" class="carousel-image"></li>
+                </ul>
+            </div>
+            <nav>
+                <button class="current"></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </nav>
+        </main>
+    </section>
+
+    <section class="products-container">
+        <div class="products">
+            <div class="shop-product">
+                <span class="shop-product-title">Beige Tshirt</span>
+                    <img src="image/beige-tsirt.jpg" alt="" class="shop-product-img">
+                    <div class="shop-product-details">
+                        <span class="shop-product-price">$12.99</span>
+                        <button class="add-cart-button">ADD TO CART</button>
                     </div>
             </div>
-            <div class="shop-item">
-                <span class="shop-item-title">Blsck Tshirt</span>
-                <img src="./image/black-tshirt.jpg" alt="" class="shop-item-img">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$13.49</span>
-                    <button class="btn btn-primary shop-item-button">ADD TO CART</button>
+            <div class="shop-product">
+                <span class="shop-product-title">Blsck Tshirt</span>
+                <img src="image/black-tshirt.jpg" alt="" class="shop-product-img">
+                <div class="shop-product-details">
+                    <span class="shop-product-price">$13.49</span>
+                    <button class="add-cart-button">ADD TO CART</button>
                 </div>
             </div>
-            <div class="shop-item">
-                <span class="shop-item-title">Green Skirt</span>
-                <img src="./image/green-skirt.jpg" alt="" class="shop-item-img">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$11.29</span>
-                    <button class="btn btn-primary shop-item-button">ADD TO CART</button>
+            <div class="shop-product">
+                <span class="shop-product-title">Green Skirt</span>
+                <img src="image/green-skirt.jpg" alt="" class="shop-product-img">
+                <div class="shop-product-details">
+                    <span class="shop-product-price">$11.29</span>
+                    <button class="add-cart-button">ADD TO CART</button>
                 </div>
-            </div>
-            <div class="shop-item">
-                <span class="shop-item-title">Jeans</span>
-                    <img src="./image/jeans.jpg" alt="" class="shop-item-img">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$9.99</span>
-                        <button class="shop-item-button">ADD TO CART</button>
-                    </div>
             </div>
         </div>
     </section>
+
 
     
     <script src="app.js"></script>
+    <script src="products.js"></script>
 </body>
 </html>
