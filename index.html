@@ -20,12 +20,14 @@
     </header>
 
     <!-- based on how to make modal to display and hide -->
-    <section class="cart-container" id="hidden">
-        <div id="close-my-cart">X</div>
-        <div class="cart-total">
-            <span class="cart-total-title">TOTAL</span>
-            <span class="cart-total-price"><small>$</small>00.00</span>
-            <strong class="purchase-button">PURCHASE</strong>
+    <section id="cart-container" id="hidden">
+        <div class="cart-header">
+            <div class="cart-total">
+                <span class="cart-total-title">TOTAL</span>
+                <span class="cart-total-price"><small>$</small>00.00</span>
+                <strong class="purchase-button">PURCHASE</strong>
+            </div>
+            <div id="close-my-cart">X</div>
         </div>
 
         <!-- let cart = [].push によってjavascriptでカートリストは作っていく -->
@@ -33,7 +35,7 @@
             <ul>
                 <li class="cart-product">
                     <img src="image/beige-tsirt.jpg" alt="image" class="cart-product-image" width="100px" height="100px">
-                    <span class="cart-product-title">Beige Tshirt</span>
+                    <h5 class="cart-product-title">Beige Tshirt</h5>
                     <span class="cart-quantity">
                         <input class="cart-quantity-input" type="number" value="1">
                         <button class="remove-button" type="button">Remove</button>
@@ -41,7 +43,7 @@
                 </li>
                 <li class="cart-product">
                     <img src="image/green-skirt.jpg" alt="image" class="cart-product-image" width="100px" height="100px">
-                    <span class="cart-product-title">Green Skirt</span> 　
+                    <h5 class="cart-product-title">Green Skirt</h5> 　
                     <span class="cart-quantity">
                         <input class="cart-quantity-input" type="number" value="1">
                         <button class="remove-button" type="button">Remove</button>
@@ -61,7 +63,7 @@
                     <li><img src="image/jeans.jpg" alt="image" class="carousel-image"></li>
                 </ul>
             </div>
-            <nav>
+            <nav id="nav-button">
                 <button class="current"></button>
                 <button></button>
                 <button></button>
