@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping cart with vanilla js</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">STORE</a></li>
                 <li><a href="#">ABOUT</a></li>
-                <li><a href="#" id="my-cart">Cart</a><span>0</span></li>
+                <li id="my-cart">Cart<span>0</span></li>
             </ul>
         </nav>
     </header>
@@ -28,24 +28,26 @@
             <strong class="purchase-button">PURCHASE</strong>
         </div>
 
+        <!-- let cart = [].push によってjavascriptでカートリストは作っていく -->
         <div class="cart-products">
-            <div class="cart-product">
-                <!-- list style is also good -->
-                <img src="image/green-skirt.jpg" alt="image" class="cart-product-image" width="100" height="100">
-                <span class="cart-product-title">Green Skirt</span>
-                <span class="cart-quantity">
-                    <input class="cart-quantity-input" type="number" value="1">
-                    <button class="remove-button" type="button">REMOVE</button>
-                </span>
-            </div>
-            <div class="cart-product">
-                <img src="image/beige-tsirt.jpg" alt="image" class="cart-product-image" width="100" height="100">
-                <span class="cart-product-title">Baige Tshirt</span>
-                <span class="cart-quantity">
-                    <input class="cart-quantity-input" type="number" value="1">
-                    <button class="remove-button" type="button">REMOVE</button>
-                </span>
-            </div>
+            <ul>
+                <li class="cart-product">
+                    <img src="image/beige-tsirt.jpg" alt="image" class="cart-product-image" width="100px" height="100px">
+                    <span class="cart-product-title">Beige Tshirt</span>
+                    <span class="cart-quantity">
+                        <input class="cart-quantity-input" type="number" value="1">
+                        <button class="remove-button" type="button">Remove</button>
+                    </span>
+                </li>
+                <li class="cart-product">
+                    <img src="image/green-skirt.jpg" alt="image" class="cart-product-image" width="100px" height="100px">
+                    <span class="cart-product-title">Green Skirt</span> 　
+                    <span class="cart-quantity">
+                        <input class="cart-quantity-input" type="number" value="1">
+                        <button class="remove-button" type="button">Remove</button>
+                    </span>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -98,8 +100,7 @@
     </section>
 
 
-    
-    <script src="app.js"></script>
+    <script src="test.js"></script>
     <script src="products.js"></script>
 </body>
 </html>
