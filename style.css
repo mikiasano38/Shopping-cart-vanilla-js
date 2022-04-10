@@ -103,10 +103,25 @@ header li > a {
 #products-carousel {
     width: 600px;
     height: 400px;
-    outline: 6px solid red;
     margin: 100px auto;
-    /* overflow: hidden; */
 }
+
+.carousel-images {
+    overflow: hidden;
+}
+
+#main-image{
+    /* position: relative; */
+}
+
+#prev,
+#next {
+    /* position: absolute; */
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
 
 #main-image ul {
     height: 100%;
@@ -115,6 +130,21 @@ header li > a {
     margin: 0;
     display: flex;
 }
+
+#prev, #next {
+    top: 50%;
+    font-size: 20px;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+
 
 #main-image li {
     min-width: 600px;
